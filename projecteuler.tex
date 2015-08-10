@@ -1,0 +1,122 @@
+% 2014 Michael Seyfert <michael@codesand.org>
+\documentclass[12pt]{article}
+\usepackage{natbib}
+\usepackage{makeidx}
+\input{/home/michael/my/general.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations,decorations.markings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page Setup.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmainfont[Numbers=Uppercase]{Fanwood}
+\setmathsfont{Minion Pro}
+\usepackage{setspace}
+\linespread{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \numberwithin{equation}{section}
+
+%\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+     urlcolor=black,
+    pdfauthor={Michael Seyfert <\myemail>},
+    pdfsubject={Project Euler},
+    pdftitle={Project Euler Solutions},
+    pdfkeywords={mathematics}
+}
+
+\definecolor[named]{section-color}{rgb}{.11,.23,.7}
+\definecolor[named]{medium-blue}{rgb}{.11,.23,.8}
+
+%% \def\mhighlight#1{
+%%   \colorbox{lightblue}{\boxed{#1}}
+%% }
+
+\def\mhighlight#1{
+{\boxed{#1}}
+}
+
+%colored titles
+\def\mysubsection#1{
+\subsection{\textcolor{section-color}{#1}}
+}
+
+\def\mysubsubsection#1{
+\subsubsection{\textcolor{section-color}{#1}}
+}
+
+\def\mhighlight#1{
+\colorbox{lb}{\boxed{#1}}
+}
+
+% Colorize
+\newcommand{\colize}[1]{\color{medium-blue}#1\color{black}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title pages.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{Project Euler Solutions}
+\author{Michael Seyfert <\href{mailto:\myemail}{\myemail}>}
+\maketitle
+Solutions to problems on \url{https://projecteuler.net}
+
+\begin{itemize}
+\colize{\item} Problem 28.
+\[
+A =
+\begin{bmatrix}
+21 & 22 & 23 & 24 & 25 \\
+20 &  7 &  8 &  9 & 10 \\
+19 &  6 &  1 &  2 & 11 \\
+18 &  5 &  4 &  3 & 12 \\
+17 & 16 & 15 & 14 & 13 \\
+\end{bmatrix}
+\qquad \text{for} \quad n =5
+\]
+\begin{align*}
+  \text{Upper right diagonals}&\qquad \sum_{1 \le k \le \ceil{n/2}} (2k-1)^2 \\
+%  \text{Lower left diagonals}&\qquad \sum_{1 \le k \le \ceil{n/2}} \floor{\frac{(2k-1)^2}{2}} + (2k-1).
+\end{align*}
+Closed form is
+\[
+1 + \overbrace{(3 + 5 + 7 + 9)}^{2\text{ diff}} + \overbrace{(13 + 17 + 21 + 25)}^{4\text{ diff}} = 101.
+\]
+
+\colize{\item} Problem 29.
+
+\[
+a^b \qquad\text{for}\quad 2 \le a \le 5,\qquad 2 \le b \le 5.
+\]
+How many distinct terms are in $a^b$ for $2 \le a,b \le 100$?
+
+\colize{\item} Problem 30.
+\[
+\text{number of digits in $x$ (base $b$)} = d_b(x) = \lceil\log_b(x+1)\rceil \quad \text{integer } x \ge 1
+\]
+Find the smallest $n$ such that
+\[10^n - 1 > n(9^5)\]
+This gives $n = 6$. This means there are at most $6$ digits in a number
+that satisfies the property we want.
+
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \bibliographystyle{plainnat}
+%% \bibliography{pe_bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Use 'makeindex projecteuler' command to make the index.
+%\printindex
+
+\end{document}
