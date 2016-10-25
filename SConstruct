@@ -6,7 +6,8 @@
 import os,os.path,re,subprocess,glob
 
 # Use clang
-env = Environment(CXX = 'clang++')
+#env = Environment(CXX = 'clang++')
+env = Environment(CXX = 'g++')
 
 BUILD_DIR = 'build'
 SRC_DIR = 'src'
@@ -23,7 +24,7 @@ if ARGUMENTS.get('debug', 0):
     LINK_FLAGS = ' -L/usr/local/lib '
 else:
 #    BUILD_FLAGS += ' -O9 -mmmx -msse -msse2 -msse3 '
-    BUILD_FLAGS += ' -Ofast '
+    BUILD_FLAGS += ' -O3 ' # ' -Ofast '
     LINK_FLAGS = ' -L/usr/local/lib -s '
 
 # Use c++11 (14?) features.
