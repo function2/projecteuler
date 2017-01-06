@@ -1,13 +1,13 @@
 #!/usr/bin/env python2
-# Copyright (C) 2014  Michael Seyfert <michael@codesand.org>
+# Copyright (C) 2017  Michael Seyfert <michael@codesand.org>
 
 # Build instructions for projecteuler.net solutions.
 
 import os,os.path,re,subprocess,glob
 
 # Use clang
-#env = Environment(CXX = 'clang++')
-env = Environment(CXX = 'g++')
+env = Environment(CXX = 'clang++')
+# env = Environment(CXX = 'g++')
 
 BUILD_DIR = 'build'
 SRC_DIR = 'src'
@@ -28,7 +28,8 @@ else:
     LINK_FLAGS = ' -L/usr/local/lib -s '
 
 # Use c++11 (14?) features.
-BUILD_FLAGS += ' -std=c++1y '
+# BUILD_FLAGS += ' -std=c++1y '
+BUILD_FLAGS += ' -std=c++14 '
 BUILD_FLAGS += ' -Wall -Werror -Wunreachable-code '
 
 env.Append(LINKFLAGS = LINK_FLAGS)

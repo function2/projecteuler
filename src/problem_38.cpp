@@ -4,6 +4,7 @@
 #include<string>
 #include<algorithm>
 #include<cstdlib>
+#include<cstring>
 #include<sstream>
 using namespace std;
 

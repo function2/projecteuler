@@ -31,6 +31,7 @@ We only have to go up to (9!) 7.
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 

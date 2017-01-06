@@ -99,7 +99,7 @@ pair<int,int> CheckNum(int num, int den)
 			int test_d = atoi(d.substr(0,1).c_str());
 			if(Check(test_n,test_d,ni,di)){
 				printf("%d/%d = %d/%d\n",num,den,test_n,test_d);
-				return make_pair<int,int>(test_n,test_d);
+				return make_pair(test_n,test_d);
 			}
 		}
 		// Cross 2.
@@ -108,7 +108,7 @@ pair<int,int> CheckNum(int num, int den)
 			int test_d = atoi(&d[1]);
 			if(Check(test_n,test_d,ni,di)){
 				printf("%d/%d = %d/%d\n",num,den,test_n,test_d);
-				return make_pair<int,int>(test_n,test_d);
+				return make_pair(test_n,test_d);
 			}
 		}
 		// Last digits.
